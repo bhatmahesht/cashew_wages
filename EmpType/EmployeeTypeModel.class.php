@@ -8,8 +8,8 @@
 class EmployeeTypeModel {
     const SQL_IDENTIFIER_QUOTE='`';
     const SQL_TABLE_NAME='employee_type';
-    const SQL_INSERT='INSERT INTO `employee_type` (`ID`,`Emp_Type`,`Emp_DA`,`Emp_Rate_Wholes`,`Emp_Rate_Pieces`,`Emp_Rate_Day`,`CalbyDays`,`Description`) VALUES (?,?,?,?,?,?,?,?)';
-    const SQL_UPDATE='UPDATE `employee_type` SET `ID`=?,`Emp_Type`=?,`Emp_DA`=?,`Emp_Rate_Wholes`=?,`Emp_Rate_Pieces`=?,`Emp_Rate_Day`=?,`CalbyDays`=?,`Description`=? WHERE `ID`=?';
+    const SQL_INSERT='INSERT INTO `employee_type` (`ID`,`Emp_Type`,`Emp_DA`,`Emp_Rate_Wholes`,`Emp_Rate_Pieces`,`Emp_Rate_Day`,`CalbyDays`,`Description`,`minimum_kg`) VALUES (?,?,?,?,?,?,?,?,?)';
+    const SQL_UPDATE='UPDATE `employee_type` SET `ID`=?,`Emp_Type`=?,`Emp_DA`=?,`Emp_Rate_Wholes`=?,`Emp_Rate_Pieces`=?,`Emp_Rate_Day`=?,`CalbyDays`=?,`Description`=?,`minimum_kg` WHERE `ID`=?';
     const SQL_SELECT_PK='SELECT * FROM `employee_type` WHERE `ID`=?';
     const SQL_DELETE_PK='DELETE FROM `employee_type` WHERE `ID`=?';
     const FIELD_ID=0;
@@ -20,6 +20,7 @@ class EmployeeTypeModel {
     const FIELD_EMP_RATE_DAY=5;
     const FIELD_CALBYDAYS=6;
     const FIELD_DESCRIPTION=7;
+    const FIELD_MINIMUM_KG=8;
     private static $PRIMARY_KEYS=array(self::FIELD_ID);
     private static $FIELD_NAMES=array(
     self::FIELD_ID=>'ID',
@@ -29,7 +30,8 @@ class EmployeeTypeModel {
     self::FIELD_EMP_RATE_PIECES=>'Emp_Rate_Pieces',
     self::FIELD_EMP_RATE_DAY=>'Emp_Rate_Day',
     self::FIELD_CALBYDAYS=>'CalbyDays',
-    self::FIELD_DESCRIPTION=>'Description');
+    self::FIELD_DESCRIPTION=>'Description',
+    self::FIELD_MINIMUM_KG=>'minimum_kg');
     private static $DEFAULT_VALUES=array(
     'ID'=>null,
     'Emp_Type'=>'',
@@ -38,7 +40,8 @@ class EmployeeTypeModel {
     'Emp_Rate_Pieces'=>'',
     'Emp_Rate_Day'=>'',
     'CalbyDays'=>'',
-    'Description'=>'');
+    'Description'=>'',
+    'minimum_kg');
     private $id;
     private $eMpType;
     private $eMpDa;
@@ -47,6 +50,7 @@ class EmployeeTypeModel {
     private $eMpRateDay;
     private $calByDays;
     private $description;
+    private $mInimumKg;
 
     /**
      * store for old instance after object has been modified
@@ -314,7 +318,23 @@ class EmployeeTypeModel {
     public function getDescription() {
         return $this->description;
     }
+    
+    /*
+     * Set values for minimum Kg
+     */
 
+    public function &setMinimumKg($minimum_kg){
+        $this->notifyChanged(self::FIELD_MINIMUM_KG);
+        $this->mInimumKg=$minimum_kg;
+        return $this;
+    }
+    
+    /*
+     * Get values for minimum kg
+     */
+    public function getMinimumKg(){
+        return $this->mInimumKg;
+    }
     /**
      * Get array with field id as index and field name as value
      *
@@ -370,7 +390,8 @@ class EmployeeTypeModel {
         self::FIELD_EMP_RATE_PIECES=>$this->getEMpRatePieces(),
         self::FIELD_EMP_RATE_DAY=>$this->getEMpRateDay(),
         self::FIELD_CALBYDAYS=>$this->getCalByDays(),
-        self::FIELD_DESCRIPTION=>$this->getDescription());
+        self::FIELD_DESCRIPTION=>$this->getDescription(),
+        self::FIELD_MINIMUM_KG=>$this->getMinimumKg());
     }
 
 
@@ -648,6 +669,7 @@ class EmployeeTypeModel {
         $this->setEMpRateDay($result['Emp_Rate_Day']);
         $this->setCalByDays($result['CalbyDays']);
         $this->setDescription($result['Description']);
+        $this->setMinimumKg($result['minimum_kg']);
     }
 
     /**
@@ -690,6 +712,7 @@ class EmployeeTypeModel {
         $stmt->bindValue(6,$this->getEMpRateDay());
         $stmt->bindValue(7,$this->getCalByDays());
         $stmt->bindValue(8,$this->getDescription());
+        $stmt->bindValue(9,$this->getMinimumKg());
     }
 
 

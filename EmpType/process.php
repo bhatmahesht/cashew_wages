@@ -15,6 +15,7 @@ $EmpTypeObj->setEMpDa($_GET['Emp_DA']);
 $EmpTypeObj->setEMpRateWholes($_GET['Emp_Rate_Wholes']);
 $EmpTypeObj->setEMpRatePieces($_GET['Emp_Rate_Pieces']);
 $EmpTypeObj->setEMpRateDay($_GET['Emp_Rate_Day']);
+$EmpTypeObj->setMinimumKg($_GET['minimum_kg']);
 if ($_GET['CalbyDays']==on) {
     $EmpTypeObj->setCalByDays(1);
 }
@@ -26,7 +27,7 @@ $EmpTypeObj->setDescription($_GET['Description']);
 //print $EmpTypeObj->getEMpDa();
 $a= $_GET['submit'];
 //print $_GET['Act'];
-print $_GET['CalByDays'];
+//print $_GET['CalByDays'];
 //$EmpTypeObj->assignByHash($_GET);
 if ($_GET['CalbyDays']==on) {
     $EmpTypeObj->setCalByDays(1);
@@ -38,7 +39,7 @@ if ($_GET['CalbyDays']==on) {
 switch($_GET['submit'])
 {
     case 'ADD':
-        print $EmpTypeObj->getCalByDays();
+        //print $EmpTypeObj->getCalByDays();
         $EmpTypeObj->insertIntoDatabase($db);
         
   //      print $EmpTypeObj->getEMpType();

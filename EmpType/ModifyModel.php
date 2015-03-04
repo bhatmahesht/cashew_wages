@@ -91,6 +91,15 @@
                 </tr>
                 <tr>
                     <td>
+                        <label class ="labelfield"> Minimum Kgs desired </label>
+                    </td>
+                    <td>
+                        <input class="textfield" type="text" name="minimum_kg" 
+                               value=<?php print $EmpTypeObj->getMinimumKg() ?> size="20" /><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <label class="labelfield">Description</label>
                     </td>
                     <td>
