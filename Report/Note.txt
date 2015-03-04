@@ -1,0 +1,11 @@
+
+
+2.Show for displayWeeksModel.php
+-----------------------------------------------
+StartDate EndDate NationalHolidays WeeklyReport
+
+2.1 Algorithm for display weeks
+    2.1.1 Select distinct StartDate, EndDate combination from WagesArchive sort
+            them by StartDate Descending Order
+    2.1.2 Select National Holidays and create link for weekly report using
+          StartDate and EndDate;

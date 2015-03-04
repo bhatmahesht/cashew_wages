@@ -1,0 +1,1 @@
+select wageweeks.* from wageweeks where `IsTransfered`=false;

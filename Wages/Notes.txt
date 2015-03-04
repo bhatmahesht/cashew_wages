@@ -1,0 +1,21 @@
+Folder: Wages
+
+This folder is responsible for following actions
+
+1. displaying the weeks for which wages to be added
+2. displaying the employees for which wages to added for the week
+3. display the wage report for the week
+
+2.1 Adding wages to database.. it should be unique for the combination of each
+employee for the week
+
+2.2 Navigate in the following manner while adding
+    2.2.1 look for the next employee for the same type, while finished look for
+the next type, unfilled employee; do this until.. all are finished
+
+2.3 while displaying employees..display 'Add' if Not added to him else display
+modify/delete
+
+
+
+

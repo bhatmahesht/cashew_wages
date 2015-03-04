@@ -1,0 +1,337 @@
+-- phpMyAdmin SQL Dump
+-- version 3.1.3.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Oct 11, 2009 at 03:09 AM
+-- Server version: 5.1.33
+-- PHP Version: 5.2.9
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `kaladhara`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `defaults`
+--
+
+CREATE TABLE IF NOT EXISTS `defaults` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `WeekID` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `defaults`
+--
+
+INSERT INTO `defaults` (`ID`, `WeekID`) VALUES
+(1, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employees`
+--
+
+CREATE TABLE IF NOT EXISTS `employees` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `PF_ID` varchar(20) COLLATE latin1_general_ci NOT NULL,
+  `Name` varchar(40) COLLATE latin1_general_ci NOT NULL,
+  `Address` varchar(100) COLLATE latin1_general_ci NOT NULL,
+  `Phone` varchar(20) COLLATE latin1_general_ci NOT NULL,
+  `TypeID` int(11) DEFAULT NULL,
+  `Description` varchar(100) COLLATE latin1_general_ci NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=32 ;
+
+--
+-- Dumping data for table `employees`
+--
+
+INSERT INTO `employees` (`ID`, `PF_ID`, `Name`, `Address`, `Phone`, `TypeID`, `Description`) VALUES
+(1, '', 'Mahabhaleshwar J Naik', '', '', 3, ''),
+(2, '', 'Manjunath V Naik', '', '', 3, ''),
+(3, '', 'Manjunath J Naik', '', '', 3, ''),
+(4, '', 'Seetu H Gowda', '', '', 2, ''),
+(5, '', 'Shaila K Gowda', '', '', 2, ''),
+(6, '', 'Bagi D Gowda', '', '', 2, ''),
+(7, '', 'Subbi G Gowda', '', '', 2, ''),
+(8, '', 'Kutni N Gowda', '', '', 2, ''),
+(9, '', 'Bebi G Gowda', '', '', 1, ''),
+(10, '', 'Laxmi M Gowda', '', '', 1, ''),
+(11, '', 'Radha M Gowda', '', '', 1, ''),
+(12, '', 'Seema N Achari', '', '', 1, ''),
+(13, '', 'Malini Y Gowda', '', '', 1, ''),
+(14, '', 'Sangeeta R Naik', '', '', 4, ''),
+(15, '', 'Revati V Naik', '', '', 4, ''),
+(16, '', 'Sumana D Deshbhandari', '', '', 4, ''),
+(17, '', 'Jayalaxmi A Naik', '', '', 4, ''),
+(18, '', 'Malati G Deshbhandari', '', '', 4, ''),
+(19, '', 'Kalavati R Deshbhandari', '', '', 4, ''),
+(20, '', 'Deepa V Deshbhandari', '', '', 4, ''),
+(21, '', 'Shyamala M Deshbhandari', '', '', 4, ''),
+(22, '', 'Saroja T Naik', '', '', 4, ''),
+(23, '', 'Nagaratna H Gadiga', '', '', 4, ''),
+(24, '', 'Anita S Gunaga', '', '', 4, ''),
+(25, '', 'Savita B Gadiga', '', '', 4, ''),
+(26, '', 'Savita K Mukri', '', '', 4, ''),
+(27, '', 'Savitri J Naik', '', '', 4, ''),
+(28, '', 'Deepa V Naik', '', '', 4, ''),
+(29, '', 'Deepa U Naik', '', '', 4, ''),
+(30, '', 'Narmada K Achari', '', '', 4, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee_type`
+--
+
+CREATE TABLE IF NOT EXISTS `employee_type` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Emp_Type` varchar(40) COLLATE latin1_general_ci NOT NULL,
+  `Emp_DA` float NOT NULL,
+  `Emp_Rate_Wholes` float NOT NULL,
+  `Emp_Rate_Pieces` float NOT NULL,
+  `Emp_Rate_Day` float NOT NULL,
+  `CalbyDays` tinyint(1) NOT NULL,
+  `Description` varchar(100) COLLATE latin1_general_ci NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=23 ;
+
+--
+-- Dumping data for table `employee_type`
+--
+
+INSERT INTO `employee_type` (`ID`, `Emp_Type`, `Emp_DA`, `Emp_Rate_Wholes`, `Emp_Rate_Pieces`, `Emp_Rate_Day`, `CalbyDays`, `Description`) VALUES
+(1, 'Peeler', 31.11, 8.5, 4.25, 0, 0, ''),
+(2, 'Cutter', 31.11, 8.2, 0, 0, 0, ''),
+(3, 'Roaster', 31.11, 0, 0, 90.7, 1, ''),
+(4, 'Grader', 31.11, 0, 0, 75.9, 1, ''),
+(18, 'Stealer', 33, 24, 32, 12, 1, 'This is test'),
+(19, 'Lazy', 43, 23, 25, 44, 0, 'Efficient worker');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `months`
+--
+CREATE TABLE IF NOT EXISTS `months` (
+`StartDate` date
+,`EndDate` date
+);
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wages`
+--
+
+CREATE TABLE IF NOT EXISTS `wages` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Emp_ID` int(11) NOT NULL,
+  `WeekID` int(11) NOT NULL,
+  `NoOfKgsWhole` float DEFAULT '0',
+  `NoOfKgsPieces` float DEFAULT '0',
+  `PreDays` int(11) DEFAULT '0',
+  `OtherDed` float DEFAULT '0',
+  `Description` varchar(100) COLLATE latin1_general_ci NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=61 ;
+
+--
+-- Dumping data for table `wages`
+--
+
+INSERT INTO `wages` (`ID`, `Emp_ID`, `WeekID`, `NoOfKgsWhole`, `NoOfKgsPieces`, `PreDays`, `OtherDed`, `Description`) VALUES
+(3, 1, 3, 0, 0, 4, 0, 'GOod'),
+(4, 2, 3, 0, 0, 5, 0, 'GOod'),
+(5, 3, 3, 0, 0, 3, 0, 'GOod'),
+(6, 4, 3, 80, 0, 6, 0, 'GOod'),
+(7, 5, 3, 70, 0, 5, 0, 'GOod'),
+(8, 6, 3, 58, 0, 3, 0, 'GOod'),
+(9, 7, 3, 64, 0, 6, 0, 'GOod'),
+(10, 8, 3, 90, 0, 6, 0, 'GOod'),
+(11, 9, 3, 50, 10, 6, 0, 'GOod'),
+(12, 10, 3, 40, 8, 6, 0, 'GOod'),
+(13, 11, 3, 12, 4, 2, 0, 'GOod'),
+(14, 12, 3, 36, 6, 6, 0, 'GOod'),
+(15, 13, 3, 70, 7, 6, 0, 'GOod'),
+(16, 14, 3, 0, 0, 6, 0, 'GOod'),
+(17, 15, 3, 0, 0, 5, 0, 'GOod'),
+(18, 16, 3, 0, 0, 3, 0, 'GOod'),
+(19, 17, 3, 0, 0, 6, 0, 'GOod'),
+(20, 18, 3, 0, 0, 3, 0, 'GOod'),
+(21, 19, 3, 0, 0, 4, 0, 'GOod'),
+(22, 20, 3, 0, 0, 6, 0, 'GOod'),
+(23, 21, 3, 0, 0, 4, 0, 'GOod'),
+(24, 22, 3, 0, 0, 0, 0, 'GOod'),
+(25, 23, 3, 0, 0, 2, 0, 'GOod'),
+(26, 24, 3, 0, 0, 0, 0, 'GOod'),
+(27, 25, 3, 0, 0, 6, 0, 'GOod'),
+(28, 26, 3, 0, 0, 5, 0, 'GOod'),
+(29, 27, 3, 0, 0, 2, 0, 'GOod'),
+(30, 28, 3, 0, 0, 6, 0, 'GOod'),
+(31, 29, 3, 0, 0, 4, 0, 'GOod'),
+(32, 30, 3, 0, 0, 4, 0, 'GOod'),
+(33, 1, 4, NULL, NULL, 12, NULL, '2'),
+(34, 2, 4, NULL, NULL, 2, NULL, 'Not good'),
+(35, 3, 4, NULL, NULL, 3, NULL, 'Not good'),
+(36, 4, 4, NULL, NULL, 4, 0, ''),
+(37, 4, 4, NULL, NULL, 4, 0, ''),
+(38, 4, 4, NULL, NULL, 4, 0, ''),
+(39, 4, 4, NULL, NULL, 4, 0, ''),
+(40, 5, 4, NULL, NULL, 4, 0, ''),
+(41, 6, 4, NULL, NULL, 4, 0, ''),
+(42, 7, 4, NULL, NULL, 2, 0, ''),
+(43, 4, 4, 0, NULL, 45, 12, 'd'),
+(44, 1, 6, NULL, NULL, 3, 0, ''),
+(45, 2, 6, NULL, NULL, 4, 0, ''),
+(46, 3, 6, NULL, NULL, 2, 0, ''),
+(47, 4, 6, 34, NULL, 4, 0, ''),
+(48, 5, 6, 12, NULL, 5, 0, ''),
+(49, 1, 7, NULL, NULL, 4, 0, ''),
+(50, 2, 7, NULL, NULL, 5, 0, ''),
+(51, 3, 7, NULL, NULL, 6, 0, ''),
+(52, 4, 7, 45, NULL, 3, 0, ''),
+(53, 5, 7, 3, NULL, 2, 0, ''),
+(54, 6, 7, 3, NULL, 3, 0, ''),
+(55, 7, 7, 4, NULL, 3, 0, ''),
+(56, 8, 7, 32, NULL, 4, 0, ''),
+(57, 9, 7, 3, 4, 2, 0, ''),
+(58, 10, 7, 3, 45, 4, 0, ''),
+(59, 11, 7, 4, 34, 4, 0, ''),
+(60, 1, 8, NULL, NULL, 5, 0, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wagesarchive`
+--
+
+CREATE TABLE IF NOT EXISTS `wagesarchive` (
+  `WagesID` int(11) NOT NULL,
+  `Name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `PF_ID` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `Type` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `StartDate` date NOT NULL,
+  `EndDate` date NOT NULL,
+  `NationalHolidays` int(11) NOT NULL,
+  `DAperDay` float NOT NULL,
+  `RateperDay` float NOT NULL,
+  `RateperWholes` float NOT NULL,
+  `RateperPieces` float NOT NULL,
+  `PreDays` int(11) NOT NULL,
+  `NoOfKgWholes` float DEFAULT NULL,
+  `NoOfKgPieces` float DEFAULT NULL,
+  `OtherDed` float DEFAULT NULL,
+  `Basic` float NOT NULL,
+  `Gross` float NOT NULL,
+  `Pf` float NOT NULL,
+  `Description` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `EmpID` int(11) NOT NULL,
+  `WeekID` int(11) NOT NULL,
+  PRIMARY KEY (`WagesID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `wagesarchive`
+--
+
+INSERT INTO `wagesarchive` (`WagesID`, `Name`, `PF_ID`, `Type`, `StartDate`, `EndDate`, `NationalHolidays`, `DAperDay`, `RateperDay`, `RateperWholes`, `RateperPieces`, `PreDays`, `NoOfKgWholes`, `NoOfKgPieces`, `OtherDed`, `Basic`, `Gross`, `Pf`, `Description`, `EmpID`, `WeekID`) VALUES
+(33, 'Mahabhaleshwar J Nai', '', 'Roaster', '2004-04-14', '2003-03-12', 1, 31.11, 90.7, 0, 0, 12, NULL, NULL, NULL, 1088.4, 1461.72, 175.41, '2', 1, 4),
+(34, 'Manjunath V Naik', '', 'Roaster', '2004-04-14', '2003-03-12', 1, 31.11, 90.7, 0, 0, 2, NULL, NULL, NULL, 181.4, 243.62, 29.23, 'Not good', 2, 4),
+(35, 'Manjunath J Naik', '', 'Roaster', '2004-04-14', '2003-03-12', 1, 31.11, 90.7, 0, 0, 3, NULL, NULL, NULL, 272.1, 365.43, 43.85, 'Not good', 3, 4),
+(36, 'Seetu H Gowda', '', 'Cutter', '2004-04-14', '2003-03-12', 1, 31.11, 0, 8.2, 0, 4, NULL, NULL, 0, 0, 124.44, 14.93, '', 4, 4),
+(37, 'Seetu H Gowda', '', 'Cutter', '2004-04-14', '2003-03-12', 1, 31.11, 0, 8.2, 0, 4, NULL, NULL, 0, 0, 124.44, 14.93, '', 4, 4),
+(38, 'Seetu H Gowda', '', 'Cutter', '2004-04-14', '2003-03-12', 1, 31.11, 0, 8.2, 0, 4, NULL, NULL, 0, 0, 124.44, 14.93, '', 4, 4),
+(39, 'Seetu H Gowda', '', 'Cutter', '2004-04-14', '2003-03-12', 1, 31.11, 0, 8.2, 0, 4, NULL, NULL, 0, 0, 124.44, 14.93, '', 4, 4),
+(40, 'Shaila K Gowda', '', 'Cutter', '2004-04-14', '2003-03-12', 1, 31.11, 0, 8.2, 0, 4, NULL, NULL, 0, 0, 124.44, 14.93, '', 5, 4),
+(41, 'Bagi D Gowda', '', 'Cutter', '2004-04-14', '2003-03-12', 1, 31.11, 0, 8.2, 0, 4, NULL, NULL, 0, 0, 124.44, 14.93, '', 6, 4),
+(42, 'Subbi G Gowda', '', 'Cutter', '2004-04-14', '2003-03-12', 1, 31.11, 0, 8.2, 0, 2, NULL, NULL, 0, 0, 62.22, 7.47, '', 7, 4),
+(43, 'Seetu H Gowda', '', 'Cutter', '2004-04-14', '2003-03-12', 1, 31.11, 0, 8.2, 0, 45, 0, NULL, 12, 0, 1399.95, 167.99, 'd', 4, 4),
+(3, 'Mahabhaleshwar J Nai', '', 'Roaster', '2009-06-06', '2009-06-12', 0, 31.11, 90.7, 0, 0, 4, 0, 0, 0, 362.8, 487.24, 58.47, 'GOod', 1, 3),
+(4, 'Manjunath V Naik', '', 'Roaster', '2009-06-06', '2009-06-12', 0, 31.11, 90.7, 0, 0, 5, 0, 0, 0, 453.5, 609.05, 73.09, 'GOod', 2, 3),
+(5, 'Manjunath J Naik', '', 'Roaster', '2009-06-06', '2009-06-12', 0, 31.11, 90.7, 0, 0, 3, 0, 0, 0, 272.1, 365.43, 43.85, 'GOod', 3, 3),
+(6, 'Seetu H Gowda', '', 'Cutter', '2009-06-06', '2009-06-12', 0, 31.11, 0, 8.2, 0, 6, 80, 0, 0, 656, 842.66, 101.12, 'GOod', 4, 3),
+(7, 'Shaila K Gowda', '', 'Cutter', '2009-06-06', '2009-06-12', 0, 31.11, 0, 8.2, 0, 5, 70, 0, 0, 574, 729.55, 87.55, 'GOod', 5, 3),
+(8, 'Bagi D Gowda', '', 'Cutter', '2009-06-06', '2009-06-12', 0, 31.11, 0, 8.2, 0, 3, 58, 0, 0, 475.6, 568.93, 68.27, 'GOod', 6, 3),
+(9, 'Subbi G Gowda', '', 'Cutter', '2009-06-06', '2009-06-12', 0, 31.11, 0, 8.2, 0, 6, 64, 0, 0, 524.8, 711.46, 85.38, 'GOod', 7, 3),
+(10, 'Kutni N Gowda', '', 'Cutter', '2009-06-06', '2009-06-12', 0, 31.11, 0, 8.2, 0, 6, 90, 0, 0, 738, 924.66, 110.96, 'GOod', 8, 3),
+(11, 'Bebi G Gowda', '', 'Peeler', '2009-06-06', '2009-06-12', 0, 31.11, 0, 8.5, 4.25, 6, 50, 10, 0, 467.5, 654.16, 78.5, 'GOod', 9, 3),
+(12, 'Laxmi M Gowda', '', 'Peeler', '2009-06-06', '2009-06-12', 0, 31.11, 0, 8.5, 4.25, 6, 40, 8, 0, 374, 560.66, 67.28, 'GOod', 10, 3),
+(13, 'Radha M Gowda', '', 'Peeler', '2009-06-06', '2009-06-12', 0, 31.11, 0, 8.5, 4.25, 2, 12, 4, 0, 119, 181.22, 21.75, 'GOod', 11, 3),
+(14, 'Seema N Achari', '', 'Peeler', '2009-06-06', '2009-06-12', 0, 31.11, 0, 8.5, 4.25, 6, 36, 6, 0, 331.5, 518.16, 62.18, 'GOod', 12, 3),
+(15, 'Malini Y Gowda', '', 'Peeler', '2009-06-06', '2009-06-12', 0, 31.11, 0, 8.5, 4.25, 6, 70, 7, 0, 624.75, 811.41, 97.37, 'GOod', 13, 3),
+(16, 'Sangeeta R Naik', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 6, 0, 0, 0, 455.4, 642.06, 77.05, 'GOod', 14, 3),
+(17, 'Revati V Naik', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 5, 0, 0, 0, 379.5, 535.05, 64.21, 'GOod', 15, 3),
+(18, 'Sumana D Deshbhandar', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 3, 0, 0, 0, 227.7, 321.03, 38.52, 'GOod', 16, 3),
+(19, 'Jayalaxmi A Naik', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 6, 0, 0, 0, 455.4, 642.06, 77.05, 'GOod', 17, 3),
+(20, 'Malati G Deshbhandar', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 3, 0, 0, 0, 227.7, 321.03, 38.52, 'GOod', 18, 3),
+(21, 'Kalavati R Deshbhand', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 4, 0, 0, 0, 303.6, 428.04, 51.36, 'GOod', 19, 3),
+(22, 'Deepa V Deshbhandari', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 6, 0, 0, 0, 455.4, 642.06, 77.05, 'GOod', 20, 3),
+(23, 'Shyamala M Deshbhand', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 4, 0, 0, 0, 303.6, 428.04, 51.36, 'GOod', 21, 3),
+(24, 'Saroja T Naik', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'GOod', 22, 3),
+(25, 'Nagaratna H Gadiga', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 2, 0, 0, 0, 151.8, 214.02, 25.68, 'GOod', 23, 3),
+(26, 'Anita S Gunaga', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'GOod', 24, 3),
+(27, 'Savita B Gadiga', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 6, 0, 0, 0, 455.4, 642.06, 77.05, 'GOod', 25, 3),
+(28, 'Savita K Mukri', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 5, 0, 0, 0, 379.5, 535.05, 64.21, 'GOod', 26, 3),
+(29, 'Savitri J Naik', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 2, 0, 0, 0, 151.8, 214.02, 25.68, 'GOod', 27, 3),
+(30, 'Deepa V Naik', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 6, 0, 0, 0, 455.4, 642.06, 77.05, 'GOod', 28, 3),
+(31, 'Deepa U Naik', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 4, 0, 0, 0, 303.6, 428.04, 51.36, 'GOod', 29, 3),
+(32, 'Narmada K Achari', '', 'Grader', '2009-06-06', '2009-06-12', 0, 31.11, 75.9, 0, 0, 4, 0, 0, 0, 303.6, 428.04, 51.36, 'GOod', 30, 3),
+(44, 'Mahabhaleshwar J Nai', '', 'Roaster', '2009-06-13', '2009-06-19', 2, 31.11, 90.7, 0, 0, 3, NULL, NULL, 0, 272.1, 365.43, 43.85, '', 1, 6),
+(45, 'Manjunath V Naik', '', 'Roaster', '2009-06-13', '2009-06-19', 2, 31.11, 90.7, 0, 0, 4, NULL, NULL, 0, 362.8, 487.24, 58.47, '', 2, 6),
+(46, 'Manjunath J Naik', '', 'Roaster', '2009-06-13', '2009-06-19', 2, 31.11, 90.7, 0, 0, 2, NULL, NULL, 0, 181.4, 243.62, 29.23, '', 3, 6),
+(47, 'Seetu H Gowda', '', 'Cutter', '2009-06-13', '2009-06-19', 2, 31.11, 0, 8.2, 0, 4, 34, NULL, 0, 278.8, 403.24, 48.39, '', 4, 6),
+(48, 'Shaila K Gowda', '', 'Cutter', '2009-06-13', '2009-06-19', 2, 31.11, 0, 8.2, 0, 5, 12, NULL, 0, 98.4, 253.95, 30.47, '', 5, 6),
+(49, 'Mahabhaleshwar J Nai', '', 'Roaster', '2008-06-06', '2008-06-12', 0, 31.11, 90.7, 0, 0, 4, NULL, NULL, 0, 362.8, 487.24, 58.47, '', 1, 7),
+(50, 'Manjunath V Naik', '', 'Roaster', '2008-06-06', '2008-06-12', 0, 31.11, 90.7, 0, 0, 5, NULL, NULL, 0, 453.5, 609.05, 73.09, '', 2, 7),
+(51, 'Manjunath J Naik', '', 'Roaster', '2008-06-06', '2008-06-12', 0, 31.11, 90.7, 0, 0, 6, NULL, NULL, 0, 544.2, 730.86, 87.7, '', 3, 7),
+(52, 'Seetu H Gowda', '', 'Cutter', '2008-06-06', '2008-06-12', 0, 31.11, 0, 8.2, 0, 3, 45, NULL, 0, 369, 462.33, 55.48, '', 4, 7),
+(53, 'Shaila K Gowda', '', 'Cutter', '2008-06-06', '2008-06-12', 0, 31.11, 0, 8.2, 0, 2, 3, NULL, 0, 24.6, 86.82, 10.42, '', 5, 7),
+(54, 'Bagi D Gowda', '', 'Cutter', '2008-06-06', '2008-06-12', 0, 31.11, 0, 8.2, 0, 3, 3, NULL, 0, 24.6, 117.93, 14.15, '', 6, 7),
+(55, 'Subbi G Gowda', '', 'Cutter', '2008-06-06', '2008-06-12', 0, 31.11, 0, 8.2, 0, 3, 4, NULL, 0, 32.8, 126.13, 15.14, '', 7, 7),
+(56, 'Kutni N Gowda', '', 'Cutter', '2008-06-06', '2008-06-12', 0, 31.11, 0, 8.2, 0, 4, 32, NULL, 0, 262.4, 386.84, 46.42, '', 8, 7),
+(57, 'Bebi G Gowda', '', 'Peeler', '2008-06-06', '2008-06-12', 0, 31.11, 0, 8.5, 4.25, 2, 3, 4, 0, 42.5, 104.72, 12.57, '', 9, 7),
+(58, 'Laxmi M Gowda', '', 'Peeler', '2008-06-06', '2008-06-12', 0, 31.11, 0, 8.5, 4.25, 4, 3, 45, 0, 216.75, 341.19, 40.94, '', 10, 7),
+(59, 'Radha M Gowda', '', 'Peeler', '2008-06-06', '2008-06-12', 0, 31.11, 0, 8.5, 4.25, 4, 4, 34, 0, 178.5, 302.94, 36.35, '', 11, 7);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wageweeks`
+--
+
+CREATE TABLE IF NOT EXISTS `wageweeks` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `StartDate` date NOT NULL,
+  `EndDate` date NOT NULL,
+  `NationalHolidays` int(11) NOT NULL,
+  `IsTransfered` tinyint(1) NOT NULL DEFAULT '0',
+  `Description` varchar(100) COLLATE latin1_general_ci NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `wageweeks`
+--
+
+INSERT INTO `wageweeks` (`ID`, `StartDate`, `EndDate`, `NationalHolidays`, `IsTransfered`, `Description`) VALUES
+(3, '2009-06-06', '2009-06-12', 0, 1, ''),
+(4, '2004-04-14', '2003-03-12', 1, 1, 'Good'),
+(6, '2009-06-13', '2009-06-19', 2, 1, ''),
+(7, '2008-06-06', '2008-06-12', 0, 1, 'Not very good week'),
+(8, '2009-06-02', '2009-06-09', 2, 0, 'good');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `months`
+--
+DROP TABLE IF EXISTS `months`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `months` AS select `wagesarchive`.`StartDate` AS `StartDate`,`wagesarchive`.`EndDate` AS `EndDate` from `wagesarchive` group by month(`wagesarchive`.`StartDate`),year(`wagesarchive`.`StartDate`) order by `wagesarchive`.`StartDate` desc;

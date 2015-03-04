@@ -1,0 +1,11 @@
+
+
+Algorithm for transfering wages to wagesarchive
+    1. Check if it wages entry for the current weak is entered, Ask for permission
+        if not finished. transfer if the answer comes as yes, give a warning that
+        data entry for that weak is over and you can enter only for the next weak now
+    2. If wages entry is already there show a warning and overwrite the wages to
+        wages archive, if not just add the wages entry to wages archive.
+    3. Show a message that how many entries are transfered into archive. Set the
+        isTransfered field in the wageweaks to true
+

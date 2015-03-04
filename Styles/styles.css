@@ -1,0 +1,35 @@
+/* 
+    Document   : styles
+    Created on : May 30, 2009, 2:59:23 PM
+    Author     : User
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+body{
+	
+}
+table{
+	border-style:hidden;
+	border-width:thin;
+
+}
+tr{
+	border-color:black;
+	border-width:thin;
+	border-style:hidden;
+	
+}
+td{
+	border-style:dotted;
+	border-right-style:hidden;
+	border-left-style:hidden;
+}

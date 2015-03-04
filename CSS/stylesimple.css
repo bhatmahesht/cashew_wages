@@ -1,0 +1,50 @@
+a:link {
+	color: #0066FF;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #0066FF;
+}
+a:hover {
+	text-decoration: none;
+	color: #0000FF;
+}
+a:active {
+	text-decoration: none;
+	color: #0066FF;
+}
+#content p{
+padding-left:3px;
+padding-right:3px;
+padding-top:3px;
+font-size:13px;
+}
+h4{
+font:Verdana, Arial, Helvetica, sans-serif;
+font-size:16px;
+padding-left:3px;
+padding-right:3px;
+padding-top:3px;
+text-decoration:underline;
+color:#0033FF;
+}
+#header{
+border-top:1px solid #000033;
+border-right:1px solid #000033;
+border-left:1px solid #000033;
+}
+#nav{
+border:1px solid #000033;;
+
+}
+#content{
+border-right:1px solid #000033;
+border-left:1px solid #000033;
+}
+#footer{
+border:1px solid #000033;
+}
+.lineRight{
+border-right:1px solid #000033;
+}

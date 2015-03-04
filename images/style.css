@@ -1,0 +1,151 @@
+/* 
+    Document   : style.css
+    Created on : Sep 6, 2009, 9:54:48 AM
+    Author     : Vinayak
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+.AddForm{
+
+    background-color: #99ff99;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    top: 50px;
+    left: 100px;
+    border-right-style: dashed;
+    border-left-style: dashed;
+    border-bottom-style: dashed;
+    border-top-style: dashed;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+    border-top-width: 2px;
+    border-right-color: silver;
+    border-left-color: silver;
+    border-bottom-color: silver;
+    border-top-color: silver;
+    line-height: 30px;
+}
+.ModifyForm{
+
+    background-color: #ffff99;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    top: 50px;
+    left: 100px;
+    border-right-style: dashed;
+    border-left-style: dashed;
+    border-bottom-style: dashed;
+    border-top-style: dashed;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+    border-top-width: 2px;
+    border-right-color: silver;
+    border-left-color: silver;
+    border-bottom-color: silver;
+    border-top-color: silver;
+    line-height: 30px;
+}
+.DeleteForm{
+
+    background-color: #ff3333;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    top: 50px;
+    left: 100px;
+    border-right-style: dashed;
+    border-left-style: dashed;
+    border-bottom-style: dashed;
+    border-top-style: dashed;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+    border-top-width: 2px;
+    border-right-color: silver;
+    border-left-color: silver;
+    border-bottom-color: silver;
+    border-top-color: silver;
+    line-height: 30px;
+}
+.labelfield{
+
+    position: relative;
+    left: 50px;
+    width: 200px;
+    visibility: visible;
+    height: 150px;
+    
+}
+.textfield{
+
+    position: relative;
+    left: 100px;
+    width: 100px;
+    visibility: visible;
+    border-right-style: groove;
+    border-left-style: groove;
+    border-bottom-style: groove;
+    border-top-style: groove;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    border-right-color: orange;
+    border-left-color: orange;
+    border-bottom-color: orange;
+    border-top-color: orange;
+    float:left;
+
+}
+.buttonfield{
+    position: relative;
+    left: 100px;
+    width: 100px;
+    visibility: visible;
+    border-right-style: groove;
+    border-left-style: groove;
+    border-bottom-style: groove;
+    border-top-style: groove;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    border-right-color: orange;
+    border-left-color: orange;
+    border-bottom-color: orange;
+    border-top-color: orange;
+    font-weight: bold;
+}
+.radiofield{
+    position: relative;
+    left: 10px;
+    width: 50px;
+    visibility: visible;
+    border-right-style: groove;
+    border-left-style: groove;
+    border-bottom-style: groove;
+    border-top-style: groove;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    border-right-color: orange;
+    border-left-color: orange;
+    border-bottom-color: orange;
+    border-top-color: orange;
+    font-weight: bold;
+}

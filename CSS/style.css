@@ -1,0 +1,132 @@
+/* 
+    Document   : style.css
+    Created on : Sep 6, 2009, 9:54:48 AM
+    Author     : Vinayak
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+.AddForm{
+
+    background-color: #99ff99;
+    font-size: 18px;
+    font-weight: bold;
+    float:left;
+}
+.ModifyForm{
+
+    background-color: #ffff99;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    
+}
+.DeleteForm{
+
+    background-color: #ff3333;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    
+}
+.labelfield{
+
+    visibility: visible;
+    
+}
+.textfield{
+
+    visibility: visible;
+    float:left;
+
+}
+.buttonfield{
+    visibility: visible;
+    font-weight: bold;
+}
+.radiofield{
+    visibility: visible;
+    font-weight: bold;
+}
+
+#logo{
+
+   
+    float:left;
+
+    margin-right: 1px;
+    margin-left: 1px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    border-right-style: dotted;
+    border-left-style: dotted;
+    border-bottom-style: dotted;
+    border-top-style: dotted;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    
+    background-color: #ccffff;
+}
+
+#subheader{
+
+    float:right;
+
+    width: 300px;
+    border-right-style: dotted;
+    border-left-style: dotted;
+    border-bottom-style: dotted;
+    border-top-style: dotted;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    background-color: #ccffff;
+}
+
+#header{
+
+    border-right-style: double;
+    border-left-style: double;
+    border-bottom-style: double;
+    border-top-style: double;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+    border-top-width: 2px;
+    float:left;
+    
+    background-color: #ccffff;
+}
+#leftbar{
+
+    border-right-style: dotted;
+    border-left-style: dotted;
+    border-bottom-style: dotted;
+    border-top-style: dotted;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    width: 400px;
+    
+    background-color: #ccffff;
+    font-size: 24px;
+    font-weight: bold;
+    float:left;
+}
+body{
+    
+    background-image: url(../CASHEW.PNG);
+}
